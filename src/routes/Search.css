@@ -1,0 +1,11 @@
+.search-wrap {
+	border: 1px solid #bce0fd;
+	border-radius: 0.5em;
+}
+.search-wrap input {
+	border: none;
+	outline: none;
+}
+.search-wrap input::placeholder {
+	color: #bce0fd;
+}

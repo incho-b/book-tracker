@@ -1,0 +1,19 @@
+@import 'reset/mixin', 'reset/variables', 'reset/text', 'reset/display';
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: map-get($font-size, 'md');
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.icon-circle {
+	@include icon-circle();
+}
+.cursor-pointer {
+	cursor: pointer;
+}

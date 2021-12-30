@@ -1,0 +1,100 @@
+// Breakpoints
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+// Color
+$red: #d71818;
+$pink: #ef81bd;
+$blue: #2058d7;
+$skyblue: #5da5d7;
+$orange: #f49733;
+$yellow: #f1b40d;
+$green: #25912d;
+$purple: #8c2bd7;
+$violet: #c734bb;
+
+// grayscale
+$gray-100: #e1e1e1;
+$gray-200: #c8c8c8;
+$gray-300: #afafaf;
+$gray-400: #969696;
+$gray-500: #7d7d7d;
+$gray-600: #646464;
+$gray-700: #4b4b4b;
+$gray-800: #323232;
+$gray-900: #191919;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+	(
+		'red': $red,
+		'pink': $pink,
+		'blue': $blue,
+		'skyblue': $skyblue,
+		'orange': $orange,
+		'yellow': $yellow,
+		'green': $green,
+		'purple': $purple,
+		'violet': $violet,
+		// grayscale
+		'gray-100': $gray-100,
+		'gray-200': $gray-200,
+		'gray-300': $gray-300,
+		'gray-400': $gray-400,
+		'gray-500': $gray-500,
+		'gray-600': $gray-600,
+		'gray-700': $gray-700,
+		'gray-800': $gray-800,
+		'gray-900': $gray-900,
+	),
+	$theme-colors
+);
+
+.burger {
+	border: 1px solid transparent;
+	width: 40px;
+	height: 40px;
+
+	.bar {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 5px;
+		border-radius: 3px;
+		background: #000;
+		margin: 1rem 0;
+		transition: all 0.5s;
+
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 40px;
+			height: 5px;
+			border-radius: 3px;
+			background: #000;
+			margin: 0.75rem 0;
+			transition: all 0.5s;
+		}
+
+		&::before {
+			margin-top: -0.75rem;
+		}
+
+		&.toggle {
+			background: transparent;
+
+			&::after {
+				margin: 0;
+				transform: rotate(-45deg);
+			}
+
+			&::before {
+				margin: 0;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

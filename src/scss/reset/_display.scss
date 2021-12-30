@@ -1,0 +1,164 @@
+$display: (
+	'block': block,
+	'inline-block': inline-block,
+	'none': none,
+	'flex': flex,
+);
+@each $name, $value in $display {
+	.display-#{$name} {
+		display: $value;
+	}
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+$justify-content: (
+	'baseline': baseline,
+	'center': center,
+	'start': flex-start,
+	'end': flex-end,
+	'between': space-between,
+	'around': space-around,
+	'evenly': space-evenly,
+);
+@each $content, $value in $justify-content {
+	.justify-#{$content} {
+		justify-content: $value;
+	}
+}
+$align-items: (
+	'baseline': baseline,
+	'center': center,
+	'start': flex-start,
+	'end': flex-end,
+	'stretch': stretch,
+);
+@each $items, $value in $align-items {
+	.align-#{$items} {
+		align-items: $value;
+	}
+}
+
+$number: (
+	'1': 1,
+	'2': 2,
+	'3': 3,
+	'4': 4,
+	'5': 5,
+	'6': 6,
+	'7': 7,
+	'8': 8,
+	'9': 9,
+	'10': 10,
+);
+@each $section, $value in $number {
+	.w#{$section} {
+		width: calc(100% / #{$value});
+	}
+}
+
+$number2: (
+	'035': 0.35,
+	'05': 0.5,
+	'075': 0.75,
+);
+@each $size, $value in $number2 {
+	.p#{$size} {
+		padding: #{$value}em;
+	}
+	.pt#{$size} {
+		padding-top: #{$value}em;
+	}
+	.pb#{$size} {
+		padding-bottom: #{$value}em;
+	}
+	.pl#{$size} {
+		padding-left: #{$value}em;
+	}
+	.pr#{$size} {
+		padding-right: #{$value}em;
+	}
+	.px#{$size} {
+		padding-left: #{$value}em;
+		padding-right: #{$value}em;
+	}
+	.py#{$size} {
+		padding-top: #{$value}em;
+		padding-bottom: #{$value}em;
+	}
+}
+@each $size, $value in $number {
+	.p#{$size} {
+		padding: #{$value}em;
+	}
+	.pt#{$size} {
+		padding-top: #{$value}em;
+	}
+	.pb#{$size} {
+		padding-bottom: #{$value}em;
+	}
+	.pl#{$size} {
+		padding-left: #{$value}em;
+	}
+	.pr#{$size} {
+		padding-right: #{$value}em;
+	}
+	.px#{$size} {
+		padding-left: #{$value}em;
+		padding-right: #{$value}em;
+	}
+	.py#{$size} {
+		padding-top: #{$value}em;
+		padding-bottom: #{$value}em;
+	}
+}
+@each $size, $value in $number2 {
+	.m#{$size} {
+		margin: #{$value}em;
+	}
+	.mt#{$size} {
+		margin-top: #{$value}em;
+	}
+	.mb#{$size} {
+		margin-bottom: #{$value}em;
+	}
+	.ml#{$size} {
+		margin-left: #{$value}em;
+	}
+	.mr#{$size} {
+		margin-right: #{$value}em;
+	}
+	.mx#{$size} {
+		margin-left: #{$value}em;
+		margin-right: #{$value}em;
+	}
+	.my#{$size} {
+		margin-top: #{$value}em;
+		margin-bottom: #{$value}em;
+	}
+}
+@each $size, $value in $number {
+	.m#{$size} {
+		margin: #{$value}em;
+	}
+	.mt#{$size} {
+		margin-top: #{$value}em;
+	}
+	.mb#{$size} {
+		margin-bottom: #{$value}em;
+	}
+	.ml#{$size} {
+		margin-left: #{$value}em;
+	}
+	.mr#{$size} {
+		margin-right: #{$value}em;
+	}
+	.mx#{$size} {
+		margin-left: #{$value}em;
+		margin-right: #{$value}em;
+	}
+	.my#{$size} {
+		margin-top: #{$value}em;
+		margin-bottom: #{$value}em;
+	}
+}
