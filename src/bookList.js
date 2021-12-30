@@ -37,9 +37,9 @@ class Home extends React.Component {
 		// 	} = await axios.get('/ttb/api/ItemSearch.aspx?ttbkey=ttbhaggardjmf1043001&Query=aladdin&QueryType=Title&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101');
 		// 	this.setState({ movies, isLoading: false });
 		// 	//{ data: { data: { movies } } } === movies.data.data.movies
-		const getMovie = await axios.get(
-			'http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbhaggardjmf1043001&Query=aladdin&QueryType=Title&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101'
-		);
+		// const getMovie = await axios.get(
+		// 	'http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbhaggardjmf1043001&Query=aladdin&QueryType=Title&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101'
+		// );
 	};
 
 	componentDidMount() {
