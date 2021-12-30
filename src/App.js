@@ -8,13 +8,18 @@ import More from './routes/Profile';
 import BookList from './bookList';
 import Navigation from './components/Navigation';
 
-// const cors = require('cors');
-// const corsOptions = {
-// 	origin: 'http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbhaggardjmf1043001&Query=aladdin&QueryType=Title&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101',
-// 	credentials: true, //access-control-allow-credentials:true
-// 	optionSuccessStatus: 200,
+// const getResults = useCallback(async () => {
+// 	try {
+// 		const res = await axios.get(`${process.env.NEXT_PUBLIC_DEV_API}/search/book?searchQuery=${searchQuery}`);
+// 		console.log(res);
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
+// }, [searchQuery]);
+
+// window.myCallback = function (data) {
+// 	console.log(data);
 // };
-// App.use(cors(corsOptions));
 
 function App() {
 	return (

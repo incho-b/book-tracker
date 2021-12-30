@@ -43,7 +43,8 @@ class Home extends React.Component {
 	};
 
 	componentDidMount() {
-		console.log(this.getMovies());
+		// myCallback({ data: 'hello world!' });
+		// console.log(this.getMovies());
 		// this.getMovie();
 		// setTimeout(() => {
 		//     this.setState({ isLoading: false });
