@@ -8,19 +8,6 @@ import More from './routes/Profile';
 import BookList from './bookList';
 import Navigation from './components/Navigation';
 
-// const getResults = useCallback(async () => {
-// 	try {
-// 		const res = await axios.get(`${process.env.NEXT_PUBLIC_DEV_API}/search/book?searchQuery=${searchQuery}`);
-// 		console.log(res);
-// 	} catch (err) {
-// 		console.log(err);
-// 	}
-// }, [searchQuery]);
-
-// window.myCallback = function (data) {
-// 	console.log(data);
-// };
-
 function App() {
 	return (
 		<HashRouter>

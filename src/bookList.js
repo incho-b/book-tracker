@@ -1,83 +1,96 @@
 import React from 'react';
 import axios from 'axios';
-import Movie from './components/Movie';
-
-// function Home() {
-// 	var main = $('div[id^=aladin-bookinfo]'); // aladin-bookinfo로 시작하는 id를 가진 div 엘리먼트를 찾습니다.
-// 	// 그 엘리먼트가 존재한다면
-// 	if (main.length > 0) {
-// 		var id = main.attr('id').substr(16, 10); // ISBN(10자리)부분을 잘라내서 얻습니다 (16칸부터 10개만큼의 문자 얻기)
-// 		var url = 'http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbhaggardjmf1043001&cover=big&ItemId=' + id + '&output=js&callback=bookDisplay';
-
-// 		// 콜백 함수입니다.
-// 		function bookDisplay(success, data) {
-// 			/* 여기서 책 정보를 이용해 구조를 만듭니다! */
-// 		}
-
-// 		// AJAX 요청을 보냅니다. getJSON() 함수는 알라딘 API 대용으로 사용불가.
-// 		$.ajax({
-// 			url: url,
-// 			jsonp: 'bookDisplay',
-// 			dataType: 'jsonp',
-// 		});
-// 	}
-// }
+// import $ from 'jquery';
+import Book from './components/Book';
 
 class Home extends React.Component {
 	state = {
 		isLoading: true,
-		movies: [],
+		books: [],
 	};
 
-	getMovies = async () => {
-		// 	const {
-		// 		data: {
-		// 			data: { movies },
-		// 		},
-		// 	} = await axios.get('/ttb/api/ItemSearch.aspx?ttbkey=ttbhaggardjmf1043001&Query=aladdin&QueryType=Title&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101');
-		// 	this.setState({ movies, isLoading: false });
-		// 	//{ data: { data: { movies } } } === movies.data.data.movies
-		// const getMovie = await axios.get(
-		// 	'http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbhaggardjmf1043001&Query=aladdin&QueryType=Title&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101'
-		// );
+	getBook = async () => {
+		// const {
+		// 	data: {
+		// 		data: { movies },
+		// 	},
+		// } = await axios.get('https://yts-proxy.nomadcoders1.now.sh/list_movies.json?sort_by=rating');
+		// this.setState({ movies, isLoading: false });
+		// //{ data: { data: { movies } } } === movies.data.data.movies
+		const books = await axios.get(
+			'http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbhaggardjmf1043004&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101'
+		);
+		this.setState({ books, isLoading: false });
 	};
-
 	componentDidMount() {
-		// myCallback({ data: 'hello world!' });
-		// console.log(this.getMovies());
-		// this.getMovie();
+		this.getBook();
+
 		// setTimeout(() => {
 		//     this.setState({ isLoading: false });
 		// }, 6000);
 	}
 
 	render() {
-		const { isLoading, movies } = this.state;
-
+		// console.log(this.getBook());
+		const { isLoading, books } = this.state;
 		return (
 			<section className="container">
-				{/* {isLoading ? (
+				{isLoading ? (
 					<div className="loader">
 						<span className="loader__text">loading...</span>
 					</div>
 				) : (
-					<div className="movies">
-						{movies.map((movie) => (
-							<Movie
-								key={movie.isbn}
-								itemId={movie.itemId}
-								pubDate={movie.pubDate}
-								title={movie.title}
-								description={movie.description}
-								cover={movie.cover}
-								searchCategoryName={movie.searchCategoryName}
+					<div className="books">
+						{books.map((book) => (
+							<Book
+								key={book.itemId}
+								itemId={book.itemId}
+								pubDate={book.pubDate}
+								title={book.title}
+								description={book.description}
+								cover={book.covere}
+								genres={book.searchCategoryName}
 							/>
 						))}
 					</div>
-				)} */}
+				)}
 			</section>
 		);
 	}
 }
 
 export default Home;
+
+// window.myCallback = function (data) {
+// 	console.log(data);
+// };
+
+// class Home extends React.Component {
+// 	setbookinfo = () => {
+// 		var resultOfBookdata = null;
+// 		var callbacks = () => {
+// 			console.log('결과물', resultOfBookdata);
+// 			this.setState({ data: resultOfBookdata });
+// 			console.log('max', Math.floor(resultOfBookdata.totalResults / 5) + 1);
+// 			this.setState({ maxpage: Math.floor(resultOfBookdata.totalResults / 5) + 1 });
+// 		};
+// 		const url = `https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbKey=ttbhaggardjmf1043001&Query=${this.state.booktitle}&output=js&callback=bookdisplay&MaxResults=5&SearchTarget=Book&Sort=SalesPoint&Start=${this.state.page}`;
+// 		$.ajax({
+// 			url: url,
+// 			async: false,
+// 			dataType: 'jsonp',
+// 			jsonp: 'bookdisplay',
+// 		});
+// 		window.bookdisplay = (success, data) => {
+// 			if (!success) {
+// 				alert('도서검색에 실패했습니다.');
+// 				return;
+// 			}
+// 			console.log('data?', data);
+// 			resultOfBookdata = data;
+// 			callbacks();
+// 		};
+// 		this.setState({ isclicked: true });
+// 	};
+// }
+// export default Home;
