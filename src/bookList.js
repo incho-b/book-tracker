@@ -17,7 +17,6 @@ class Home extends React.Component {
 		// const books = await axios.get(Aladdin_URL);
 
 		const books = await axios.get('/api/product');
-		// const books = await axios.get('/api/product');
 
 		this.setState({ books, isLoading: false });
 	};
