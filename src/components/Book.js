@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Movie({ itemId, pubDate, title, description, cover, searchCategoryName }) {
+function Book({ itemId, pubDate, title, description, cover, searchCategoryName }) {
 	return (
-		<div className="movie">
+		<div className="book">
 			{/* <Link
 				to={{
-					// pathname: '/movie-detail',
-					pathname: `/movie/${itemId}`,
+					// pathname: '/book-detail',
+					pathname: `/book/${itemId}`,
 					stalte: {
 						pubDate,
 						title,
@@ -16,26 +16,27 @@ function Movie({ itemId, pubDate, title, description, cover, searchCategoryName 
 					},
 				}}
 			> */}
-			<img src={cover} alt={title} title={title} />
-			{/* <div className="movie__data">
-				<h3 className="movie__title">{title}</h3>
+			<h3 className="book__title">title:{title}</h3>
+			{/* <img src={cover} alt={title} title={title} />
+			<div className="book__data">
+				<h3 className="book__title">{title}</h3>
 				<h5 className="moive__pubDate">{pubDate}</h5>
-				<ul className="movie__searchCategoryName">
+				<ul className="book__searchCategoryName">
 					{searchCategoryName.map((genre, index) => (
 						<li key={index} className="searchCategoryName__genre">
 							{genre}
 						</li>
 					))}
 				</ul>
-				<p className="movie__description">{description.slice(0, 200)}...</p>
+				<p className="book__description">{description.slice(0, 200)}...</p>
 			</div> */}
 			{/* </Link> */}
 		</div>
 	);
 }
 
-// Movie.propTypes = {
-// 	itemId: PropTypes.number.isRequired,
+// Book.propTypes = {
+// itemId: PropTypes.number.isRequired,
 // 	pubDate: PropTypes.number.isRequired,
 // 	title: PropTypes.string.isRequired,
 // 	description: PropTypes.string.isRequired,
@@ -43,4 +44,4 @@ function Movie({ itemId, pubDate, title, description, cover, searchCategoryName 
 // 	searchCategoryName: PropTypes.arrayOf(PropTypes.string).isRequired,
 // };
 
-export default Movie;
+export default Book;
